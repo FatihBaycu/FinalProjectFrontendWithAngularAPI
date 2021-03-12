@@ -5,8 +5,12 @@ Hello {{user}}
 {{product.productName}}
 <br>
   <ul><strong>Ürün adları</strong><li *ngFor="let product of products">{{product.productName}} {{product.unitPrice}} TL</li></ul>  -->
-
+<div class="container">
 <app-navi></app-navi>
-<app-category></app-category>
-<app-product></app-product>
-  <router-outlet></router-outlet>
+<div class="row"> 
+  <div class="col-md-3"><app-category></app-category></div>
+<div class="col-md-9"><app-product></app-product></div>
+</div>
+
+<router-outlet></router-outlet>
+</div>
