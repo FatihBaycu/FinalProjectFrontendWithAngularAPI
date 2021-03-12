@@ -1,4 +1,4 @@
 export interface ResponseModel{
-    success:Boolean,
-    message:String
+    success:boolean,
+    message:string
 }
