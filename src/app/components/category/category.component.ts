@@ -9,7 +9,7 @@ import { CategoryService } from 'src/app/services/category/category.service';
 })
 export class CategoryComponent implements OnInit {
   categories:Category[]=[];
-
+  cate:null;
   currentCategory:Category;
   //currentCategory:Category;={categoryId:0, categoryName:""}
   //tsConfig.json dosyasında "strictPropertyInitialization": false, değeri false dediğigimiz için üstteki koda ihtiyacımız kaldımadı.
@@ -38,4 +38,12 @@ export class CategoryComponent implements OnInit {
       }
       else{return "list-group-item";}
     }
+
+    getAllCategoryClass(){
+      if(!this.currentCategory)
+    {
+      return "list-group-item active";
+    }
+    else{return "list-group-item";}
+  }
 }

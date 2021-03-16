@@ -55,4 +55,5 @@ export class ProductComponent implements OnInit {
     });
     console.log("Metot bitti.");
 }
+
 }
