@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ListResposeModel } from '../models/listResponseModel';
-import { Product } from '../models/Product/product';
+import { Product } from '../models/product';
  
 @Injectable({
   providedIn: 'root'
@@ -22,4 +22,6 @@ export class ProductService {
     let newPath=this.apiUrl+"products/getbycategoryid?categoryId="+categoryId;
     return this.httpClient.get<ListResposeModel<Product>>(newPath)
     }
+
+    
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from 'src/app/models/Product/product';
+import { ToastrService } from 'ngx-toastr';
+import { CartItem } from 'src/app/models/cartItem';
+import { Product } from 'src/app/models/product';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -18,11 +21,14 @@ export class ProductComponent implements OnInit {
   //products=[this.product,this.product2,this.product3,this.product4,this.product5]
   ////////////////////// lcoal çalışma mantığı bu şekldeydi./////////////////////////////////
 
-
+    filterText="";
     products:Product[]=[];
     dataLoaded=false;
   
-  constructor(private productService:ProductService,private activatedRoute:ActivatedRoute) { }
+  constructor(private toastrService:ToastrService,
+    private productService:ProductService,
+    private activatedRoute:ActivatedRoute,
+    private cartService:CartService) { }
 
   ngOnInit(): void {
     
@@ -56,4 +62,11 @@ export class ProductComponent implements OnInit {
     console.log("Metot bitti.");
 }
 
+
+addToCart(product:Product){
+this.toastrService.success("Sepete eklendi ",product.productName);
+this.cartService.addToCart(product);
+}
+
+ 
 }
