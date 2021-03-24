@@ -2,7 +2,8 @@
 
 <div class="mb-3">
   <label for="filterText" class="form-label">Ürün Ara</label>
-  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi girniz">
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
+  placeholder="arama ifadesi girniz">
 </div>
 <div *ngIf="filterText.length>2" class="alert alert-success">{{filterText}} aradınız.</div>
 <div *ngIf="dataLoaded==false" class="spinner-border" role="status">

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CartItem } from 'src/app/models/cartItem';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
@@ -25,7 +24,8 @@ export class ProductComponent implements OnInit {
     products:Product[]=[];
     dataLoaded=false;
   
-  constructor(private toastrService:ToastrService,
+  constructor(
+    private toastrService:ToastrService,
     private productService:ProductService,
     private activatedRoute:ActivatedRoute,
     private cartService:CartService) { }
