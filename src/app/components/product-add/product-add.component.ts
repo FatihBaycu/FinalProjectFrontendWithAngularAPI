@@ -1,3 +1,4 @@
+import { ifStmt } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,FormControl,Validators} from '@angular/forms'
 import { ToastrService } from 'ngx-toastr';
@@ -32,6 +33,16 @@ export class ProductAddComponent implements OnInit {
     this.productService.addProduct(productModel).subscribe(response=>{
         console.log(productModel);
       this.toastrService.success(response.message,"Başarılı");
+    },responseError=>{
+      if(responseError.error.Errors.length>0){
+      console.log(responseError.error.Errors)
+
+      for (let i = 0; i <responseError.error.Errors.length; i++) {
+        this.toastrService.error(responseError.error.Errors[i].ErrorMessage,"Doğrulama Başarısız.");
+        
+      }
+
+      }
     })
   }
   else {

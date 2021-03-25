@@ -7,7 +7,7 @@ const routes: Routes = [
   {path:"",pathMatch:"full",component:ProductComponent},
   {path:"products",component:ProductComponent},
   {path:"products/category/:categoryId",component:ProductComponent},
-  {path:"product/add",component:ProductAddComponent}
+  {path:"products/add",component:ProductAddComponent}
   
 
 ];
