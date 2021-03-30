@@ -1,0 +1,33 @@
+<body class="text-center">
+    
+<main class="form-signin">
+  <form [formGroup]="loginForm">
+    <img class="mb-4" src="https://www.mehmetaltunel.com/wp-content/uploads/2020/02/Angular_full_color_logo.svg_.png" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Lütfen giriş yapın</h1>
+
+
+ 
+  
+  
+    <div class="form-floating">
+      <input type="email" class="form-control" formControlName="email" id="email" placeholder="name@example.com">
+      <label for="floatingInput">E-mail</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password">
+      <label for="floatingPassword">Parola</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Beni Hatırla
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" (click)="login()" type="submit">Giriş Yap</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+  </form>
+</main>
+
+
+    
+  </body>
